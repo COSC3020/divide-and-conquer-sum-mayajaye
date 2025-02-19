@@ -32,7 +32,7 @@ most important part. Add your answer to this markdown file.
 
 1. If the array has 0 or 1 elements, stop (base case). This step has a time complexity of $T(1)=1$
 2. Split the array into 3 sub arrays. This has a constant time complexity of $T(n)=1$.
-3. Add each sub array recursively. This step has a time complexity of $T(n)=3T(n/3)$, because we are making 3 recursive calls on a third of the input size with each call.
+3. Add each sub array recursively. This step has a time complexity of $T(n)=3T(\frac{n}{3})$, because we are making 3 recursive calls on a third of the input size with each call.
 4. Add the summed up arrays. This has a linear time complexity of $T(n)=n$
 
 
@@ -42,7 +42,7 @@ $T(n)=1$ if $n<=1$, and $3T(\frac{n}{3})+n$ if $n>1$
 
 To find the theta complexity of $T(n)$, we must repeatedly substitute $T(n)$ into itself, find how $T(n)$ changes with each substitution, identify how many times we can substitute before hitting the base case, and simplify $T(n)$ so that it does not depend on itself.
 
-$T(n)$ changes with each substitution by $3^iT(\frac{n}{3^i})+i(n)$, where $i$ is the number of iterations before reaching the base case. Because we are dividing the input size by 3 with each iteration, there should be $log_{3}n$ iterations before reaching the base case. substituting $log_{3}n$ for $i$, we can simplify $T(n)$ to $n+log_{3}n(n)$, because $T(\frac{n}{log_{3}n})=1$ since substituting $T(n)$ into itself $\frac{n}{$log_{3}n}$ times will reach the base case of 1. When analyzing the time complexity, we can ignore the addend n and the log base, so $T(n)$ is an element of $\Theta(n log n)$.
+$T(n)$ changes with each substitution by $3^iT(\frac{n}{3^i})+i(n)$, where $i$ is the number of iterations before reaching the base case. Because we are dividing the input size by 3 with each iteration, there should be $log_{3}n$ iterations before reaching the base case. substituting $log_{3}n$ for $i$, we can simplify $T(n)$ to $n+log_{3}n(n)$, because $T(\frac{n}{log_{3}n})=1$ since substituting $T(n)$ into itself $\frac{n}{log_{3}n}$ times will reach the base case of 1. When analyzing the time complexity, we can ignore the addend n and the log base, so $T(n)$ is an element of $\Theta(n log n)$.
 
 #### Sources
 
