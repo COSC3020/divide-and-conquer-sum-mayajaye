@@ -38,11 +38,12 @@ most important part. Add your answer to this markdown file.
 
 ###### RECURRENCE RELATION:
 
-$T(n)=1$ if $n<=1$, and $3T(\frac{n}{3})+n$ if $n>1$
+$T(n)=1$ if $n<=1$, and $3T(\frac{n}{3})$ if $n>1$
 
 To find the theta complexity of $T(n)$, we must repeatedly substitute $T(n)$ into itself, find how $T(n)$ changes with each substitution, identify how many times we can substitute before hitting the base case, and simplify $T(n)$ so that it does not depend on itself.
 
-$T(n)$ changes with each substitution by $3^iT(\frac{n}{3^i})+i(n)$, where $i$ is the number of iterations before reaching the base case. Because we are dividing the input size by 3 with each iteration, there should be $log_{3}n$ iterations before reaching the base case. substituting $log_{3}n$ for $i$, we can simplify $T(n)$ to $n+log_{3}n(n)$, because $T(\frac{n}{log_{3}n})=1$ since substituting $T(n)$ into itself $\frac{n}{log_{3}n}$ times will reach the base case of 1. When analyzing the time complexity, we can ignore the addend n and the log base, so $T(n)$ is an element of $\Theta(n log n)$.
+$T(n)$ changes with each substitution by $3^iT(\frac{n}{3^i})$, where $i$ is the number of iterations before reaching the base case. Because we are dividing the input size by 3 with each iteration, there should be $log_{3}n$ iterations before reaching the base case. substituting $log_{3}n$ for $i$, we can simplify $T(n)=3^{log_{3}n}T(\frac{n}{3^{log_{3}n}})$ to $n$, because $T(\frac{n}{3^{log_{3}n}})=T(1)$ which is a constant, and $3^{log_{3}n}=n$. So, $T(n)$ is an element of $\Theta(n)$.
+
 
 #### Sources
 
