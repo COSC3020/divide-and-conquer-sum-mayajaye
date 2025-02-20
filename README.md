@@ -33,7 +33,7 @@ most important part. Add your answer to this markdown file.
 1. If the array has 0 or 1 elements, stop (base case). This step has a time complexity of $T(1)=1$
 2. Split the array into 3 sub arrays. This has a constant time complexity of $T(n)=1$.
 3. Add each sub array recursively. This step has a time complexity of $T(n)=3T(\frac{n}{3})$, because we are making 3 recursive calls on a third of the input size with each call.
-4. Add the summed up arrays. This has a linear time complexity of $T(n)=n$
+4. Add the sums of the original 3 sub arrays. This has a constant time complexity of $T(n)=1$
 
 
 ###### RECURRENCE RELATION:
